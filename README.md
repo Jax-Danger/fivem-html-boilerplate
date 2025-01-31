@@ -58,7 +58,6 @@ To automatically bind a close button inside your UI, add:
 ```javascript
 bindNuiButton("closeBtn", "closeUI", {}, () => {
     uiManager.hideUI("myCustomUI");
-    fetchNui("closeUI");
 });
 ```
 
