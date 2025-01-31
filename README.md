@@ -56,7 +56,7 @@ uiManager.hideUI("myCustomUI");
 ### 3️⃣ **Adding a Close Button**
 To automatically bind a close button inside your UI, add:
 ```javascript
-bindNuiButton("closeBtn", "closeUI", {}, () => {
+createButton("closeBtn", "closeUI", {}, () => {
     uiManager.hideUI("myCustomUI");
 });
 ```
@@ -120,10 +120,4 @@ FiveM-UI-Template/
 
 ---
 
-## ✅ Contributing
-If you find a bug or want to improve this template, feel free to submit a pull request!
-
-📢 **GitHub:** [your-repo-link-here]
-
-🚀 Happy coding and enjoy building FiveM UIs! 🎮
 
