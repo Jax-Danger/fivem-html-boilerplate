@@ -20,7 +20,7 @@ This is a simple and modular UI template for FiveM that allows developers to cre
    mv FiveM-UI-Template your-fivem-server/resources/
    ```
 3. **Ensure the Resource is Started in `server.cfg`:**
-   ```cfg
+   ```
 ensure fivem-html-boilerplate
    ```
 
