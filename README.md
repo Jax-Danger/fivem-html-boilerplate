@@ -95,7 +95,7 @@ end)
 ```lua
 RegisterNUICallback('closeUI', function(data, cb)
     SetNuiFocus(false, false)
-    SendNuiMessage(json.encode({ action = "hideUI" }))
+    SendNUIMessage({ action = "hideUI" })
     cb(json.encode({ success = true }))
 end)
 ```
