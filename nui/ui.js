@@ -128,7 +128,7 @@ export class UIManager {
  * @param {Object} [data={}] - Optional data to send with the event.
  * @param {Function} [callback] - Optional function to execute after sending the event.
  */
-export function bindNuiButton(buttonId, nuiEvent = null, data = {}, callback) {
+export function createButton(buttonId, nuiEvent = null, data = {}, callback) {
 	const button = document.getElementById(buttonId);
 	if (!button) {
 		console.warn(`Button with ID '${buttonId}' not found.`);

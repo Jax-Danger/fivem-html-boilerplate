@@ -1,8 +1,10 @@
 RegisterCommand('ui', function()
-SendNUIMessage({
-    action = 'setDisplay',
-		balance = 1000
-})
+	SendNUIMessage({
+		action = 'setDisplay',
+		cashBalance = 100,
+		bankBalance = 1200
+
+	})
 	SetNuiFocus(true, true)
 end)
 

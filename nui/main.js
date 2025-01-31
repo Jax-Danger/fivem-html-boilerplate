@@ -1,8 +1,7 @@
-import { UIManager, bindNuiButton, fetchNui, useNuiEvent } from "./ui.js";
+import { UIManager, createButton, fetchNui, useNuiEvent } from "./ui.js";
 const uiManager = new UIManager();
 // Load custom stylesheets
 uiManager.loadCustomStyles(["custom.css"]);
-
 // Create Banking UI
 uiManager.createUI("bankingUI", () => `
 		<div class='ui'>    
@@ -18,11 +17,11 @@ uiManager.createUI("bankingUI", () => `
 // Listen for event from FiveM client
 useNuiEvent("setDisplay", (data) => {
 	console.log(JSON.stringify(data))
-	uiManager.updateText('bankBalance', '$' + data.balance)
+	uiManager.updateText('bankBalance', '$' + data.cashBalance)
 });
 uiManager.showUI('bankingUI')
 
-bindNuiButton('closeBtn', null, {}, () => {
+createButton('closeBtn', 'closeUI', {}, () => {
 	console.log('closed UI')
 	uiManager.hideUI('bankingUI')
 })
