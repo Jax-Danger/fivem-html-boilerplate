@@ -1,7 +1,7 @@
 RegisterCommand('ui', function()
-	SendNuiMessage(json.encode({
-		action = 'setDisplay',
-	}))
+SendNUIMessage({
+    action = 'setDisplay'
+})
 	SetNuiFocus(true, true)
 end)
 
