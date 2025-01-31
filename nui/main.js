@@ -1,6 +1,5 @@
 import { UIManager, bindNuiButton, fetchNui, useNuiEvent } from "./ui.js";
 const uiManager = new UIManager();
-
 // Load custom stylesheets
 uiManager.loadCustomStyles(["custom.css"]);
 
@@ -22,7 +21,7 @@ useNuiEvent("setDisplay", (data) => {
 });
 uiManager.showUI('bankingUI')
 
-bindNuiButton('closeBtn', 'closeUI', {}, () => {
+bindNuiButton('closeBtn', null, {}, () => {
 	console.log('closed UI')
 	uiManager.hideUI('bankingUI')
 })

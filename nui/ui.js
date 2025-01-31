@@ -107,13 +107,13 @@ export class UIManager {
 
 
 /**
- * Binds a button to trigger an NUI callback when clicked.
+ * Binds a button to trigger an action or an NUI callback.
  * @param {string} buttonId - The ID of the button.
- * @param {string} nuiEvent - The NUI event to send.
+ * @param {string | null} nuiEvent - The NUI event to send (or null for local actions).
  * @param {Object} [data={}] - Optional data to send with the event.
  * @param {Function} [callback] - Optional function to execute after sending the event.
  */
-export function bindNuiButton(buttonId, nuiEvent, data = {}, callback) {
+export function bindNuiButton(buttonId, nuiEvent = null, data = {}, callback) {
 	const button = document.getElementById(buttonId);
 	if (!button) {
 		console.warn(`Button with ID '${buttonId}' not found.`);
@@ -121,11 +121,18 @@ export function bindNuiButton(buttonId, nuiEvent, data = {}, callback) {
 	}
 
 	button.addEventListener("click", () => {
-		fetchNui(nuiEvent, data).then((response) => {
-			if (callback) callback(response);
-		});
+		if (nuiEvent) {
+			// Send to FiveM client
+			fetchNui(nuiEvent, data).then((response) => {
+				if (callback) callback(response);
+			});
+		} else if (callback) {
+			// Execute local UI-only action
+			callback();
+		}
 	});
 }
+
 
 // nui.js - Utility functions for FiveM NUI interactions
 
