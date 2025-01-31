@@ -87,6 +87,21 @@ export class UIManager {
 		}
 	}
 
+
+	/**
+	 * Updates the text content of an element by ID.
+	 * @param {string} elementId - The ID of the element to update.
+	 * @param {string} newText - The new text content to set.
+	 */
+	updateText(elementId, newText) {
+		const element = document.getElementById(elementId);
+		if (element) {
+			element.textContent = newText;
+		} else {
+			console.warn(`Element with ID '${elementId}' not found.`);
+		}
+	}
+
 	/**
 	 * Injects global CSS styles for base UI layout.
 	 */

@@ -1,6 +1,7 @@
 RegisterCommand('ui', function()
 SendNUIMessage({
-    action = 'setDisplay'
+    action = 'setDisplay',
+		balance = 1000
 })
 	SetNuiFocus(true, true)
 end)

@@ -18,6 +18,7 @@ uiManager.createUI("bankingUI", () => `
 // Listen for event from FiveM client
 useNuiEvent("setDisplay", (data) => {
 	console.log(JSON.stringify(data))
+	uiManager.updateText('bankBalance', '$' + data.balance)
 });
 uiManager.showUI('bankingUI')
 
