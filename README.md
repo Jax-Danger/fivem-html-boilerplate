@@ -111,10 +111,9 @@ FiveM-UI-Template/
 │── html/
 │   ├── index.html       # Entry point for UI (loads JS)
 │   ├── custom.css       # User-defined styles
-│   ├── script.js        # User-defined scripts
+│   ├── main.js          # User-defined scripts
 │   ├── ui.js            # UIManager class (core functionality)
 │── client.lua           # FiveM client-side event handling
-│── main.js              # UI and event bindings
 │── README.md            # Documentation (this file)
 ```
 
