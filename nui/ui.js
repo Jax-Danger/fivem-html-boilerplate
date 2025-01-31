@@ -30,7 +30,7 @@ export class UIManager {
 
 		const uiContainer = document.createElement("div");
 		uiContainer.id = id;
-		uiContainer.className = "ui hidden";
+		uiContainer.className = "hidden";
 		uiContainer.innerHTML = renderFunction();
 
 		if (customStyle) {
@@ -96,39 +96,8 @@ export class UIManager {
 		const style = document.createElement("style");
 		style.id = "global-styles";
 		style.innerHTML = `
-            .hidden { display: none !important; }
-            .ui {
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: rgba(0, 0, 0, 0.8);
-                color: white;
-                padding: 20px;
-                border-radius: 10px;
-                text-align: center;
-                width: 300px;
-            }
-            .hud {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: rgba(0, 0, 0, 0.7);
-                color: white;
-                padding: 10px;
-                border-radius: 5px;
-                text-align: right;
-                font-size: 18px;
-            }
-            .close-btn {
-                margin-top: 10px;
-                background: red;
-                border: none;
-                color: white;
-                padding: 5px;
-                cursor: pointer;
-            }
-        `;
+			.hidden { display: none !important; }
+		`;
 		document.head.appendChild(style);
 	}
 }
