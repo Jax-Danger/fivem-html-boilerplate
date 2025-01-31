@@ -40,14 +40,14 @@ export class UIManager {
 		document.body.appendChild(uiContainer);
 		this.uis[id] = uiContainer;
 
-		// Auto-close button detection
-		const closeBtn = uiContainer.querySelector(".close-btn");
-		if (closeBtn) {
-			closeBtn.addEventListener("click", () => {
-				this.hideUI(id);
-				fetchNui(`hide${id}`);
-			});
-		}
+		// // Auto-close button detection
+		// const closeBtn = uiContainer.querySelector(".close-btn");
+		// if (closeBtn) {
+		// 	closeBtn.addEventListener("click", () => {
+		// 		this.hideUI(id);
+		// 		fetchNui(`hide${id}`);
+		// 	});
+		// }
 
 		// Ensure UI is hidden initially
 		this.hideUI(id);

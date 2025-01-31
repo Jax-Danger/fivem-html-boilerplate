@@ -17,5 +17,10 @@ uiManager.createUI("bankingUI", () => `
 // Listen for event from FiveM client
 useNuiEvent("setDisplay", (data) => {
 	console.log(JSON.stringify(data))
-	uiManager.showUI('bankingUI'); // Show the UI specified by the client
+	uiManager.showUI('bankingUI')
 });
+
+bindNuiButton('closeBtn', 'closeUI', {}, () => {
+	console.log('closed UI')
+	uiManager.hideUI('bankingUI')
+})

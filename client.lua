@@ -6,7 +6,7 @@ RegisterCommand('ui', function()
 end)
 
 RegisterNUICallback('closeUI', function(data, cb)
-	SetNuiFocus(false, false)
-	print(data)
-	cb('ok')
+	SetNuiFocus(false, false) -- Remove NUI focus
+	SendNuiMessage(json.encode({ action = "hideUI" })) -- Tell UI to hide itself
+	cb(json.encode({ success = true }))
 end)
